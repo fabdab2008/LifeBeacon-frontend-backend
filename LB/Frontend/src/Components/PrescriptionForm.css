@@ -1,0 +1,124 @@
+.form-container {
+    padding: 10px;
+    background-color: #f9f9f988;
+    width: 70%; /* Adjusted width */
+    max-width: 1200px; /* Set a maximum width */
+    margin: 0 auto; /* Center the container */
+  }
+  
+  .form-title {
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .form-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Added gap between form and patient history */
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Adjusted width */
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    margin-bottom: 5px;
+    display: block;
+    color: #3b3b3b;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .form-input {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+    width: 100%;
+    background-color: white;
+    color: black;
+    transition: border-color 0.3s;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .form-input:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  .form-button {
+    padding: 10px;
+    font-size: 1em;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .form-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .medicine-group {
+    margin-bottom: 10px;
+  }
+  
+  .dose-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px; /* Added margin to shift dose checkboxes to next line */
+  }
+  
+  .dose-group label {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .delete-button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-top: 10px; /* Added margin to align with dose checkboxes */
+  }
+  
+  .delete-button:hover {
+    background-color: #ff1a1a;
+  }
+  
+  .patient-history {
+    width: 28%; /* Adjusted width */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .patient-history h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .patient-history p {
+    margin-bottom: 10px;
+    color: #555;
+    font-family: 'Poppins', sans-serif;
+  }

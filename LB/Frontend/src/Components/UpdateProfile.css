@@ -1,0 +1,125 @@
+.update-profile {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff69;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif; /* Use a modern font */
+  }
+  
+  .update-profile h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8em; /* Slightly larger font */
+    color: #333;
+  }
+  
+  .update-profile form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .update-profile label {
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: 500; /* Make labels slightly bolder */
+  }
+  
+  .update-profile input,
+  .update-profile select,
+  .update-profile textarea {
+    width: 100%;
+    padding: 10px; /* Increase padding for better spacing */
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    font-size: 1em; /* Consistent font size */
+    background-color: #fff; /* Set background color to white */
+    color: #000; /* Set text color to black */
+    transition: border-color 0.3s; /* Smooth transition for focus effect */
+  }
+  
+  .update-profile input:focus,
+  .update-profile select:focus,
+  .update-profile textarea:focus {
+    border-color: #007bff; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+  }
+  
+  .update-profile button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 20px; /* Increase border-radius for more rounded edges */
+    cursor: pointer;
+    font-size: 1em; /* Consistent font size */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+  }
+  
+  .update-profile button:hover {
+    background-color: #0056b3;
+  }
+  
+  .form-logo {
+    display: block;
+    margin: 0 auto 20px;
+    width: 100px;
+    height: auto;
+  }
+  
+  .checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .basic-single-select,
+  .basic-multi-select {
+    margin-bottom: 15px;
+  }
+  
+  .select__control {
+    border: 1px solid #000000;
+    border-radius: 4px;
+    font-size: 1em;
+    background-color: #fff;
+    color: #000;
+  }
+  
+  .select__control--is-focused {
+    border-color: #007bff;
+    box-shadow: none;
+  }
+  
+  .select__menu {
+    background-color: #fff;
+    color: #000;
+  }
+  
+  .select__option--is-focused {
+    background-color: #e6f7ff;
+  }
+  
+  .select__option--is-selected {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .time-picker-container {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Increase gap for better spacing */
+  }
+  
+  .time-picker-container input {
+    flex: 1; /* Make text fields take equal space */
+  }

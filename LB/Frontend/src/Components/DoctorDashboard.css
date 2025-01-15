@@ -1,0 +1,301 @@
+.doctor-dashboard {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: rgba(117, 186, 255, 0.8); /* Added transparency */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.user-info {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.user-info h2 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.menu {
+    width: 100%;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.menu li:hover {
+    background-color: #34495e;
+}
+
+.icon {
+    margin-right: 10px;
+}
+
+.main-content {
+    flex-grow: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: .3;
+}
+
+.appointments-table {
+    margin-top: 20px;
+    width: 80%;
+    background-color: rgba(96, 185, 226, 0.8);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 20px;
+    text-align: left;
+    max-height: 600px; /* Set a fixed height */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.appointments-table h2 {
+    margin-bottom: 10px;
+    color: #05305c;
+    text-align: center;
+}
+
+.search-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #888;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px 10px 10px 30px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: white; /* Set the background color to white */
+    color: black; /* Set the text color to black */
+}
+
+.appointments-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.appointments-table th, .appointments-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    color: black; /* Set the text color to black */
+}
+
+.appointments-table th {
+    background-color: #05305c;
+    color: rgb(255, 255, 255);
+}
+
+.appointments-table tr:hover {
+    background-color: #3f3f3f70;
+}
+
+.appointments-table button {
+    padding: 5px 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.appointments-table button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+.prescribe-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.appointments-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.exit-icon {
+    cursor: pointer;
+    font-size: 1.5em;
+    color: #888;
+    transition: color 0.3s;
+}
+
+.exit-icon:hover {
+    color: #f00;
+}
+
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 800px;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.prescription-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+/* ...existing code... */
+
+.notifications {
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 20px;
+    text-align: left;
+    max-height: 600px;
+    overflow-y: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.notifications-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.notifications-header h2 {
+    margin: 0;
+    color: #05305c;
+}
+
+.notifications-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.notification-item {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+.notification-item:hover {
+    background-color: #f9f9f9;
+}
+
+.notification-message {
+    flex-grow: 1;
+}
+
+.notification-time {
+    color: #888;
+    font-size: 0.9em;
+}
+
+.exit-icon {
+    cursor: pointer;
+    font-size: 1.5em;
+    color: #888;
+    transition: color 0.3s;
+}
+
+.exit-icon:hover {
+    color: #f00;
+}
