@@ -1,36 +1,42 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import './Login.css';
 import logo from '../assets/Images/logo.png';
 
 const Login = ({ closeModal, openSignupModal, openForgetPasswordModal, message }) => {
   const [userType, setUserType] = useState('');
-  const [userId, setUserId] = useState('');
+  const [NID, setNID] = useState('');
   const [password, setPassword] = useState('');
   const [warning, setWarning] = useState('');
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (userType === 'hospital') {
-      navigate('/hospital-dashboard');
-    } else if (userType === 'doctor') {
-      navigate('/doctor-dashboard');
-    } else if (userType === 'patient') {
-      navigate('/patient-dashboard'); // Navigate to patient dashboard
-    } else {
-      console.log({ userType, userId, password });
-      closeModal();
+    try {
+      const response = await axios.post('http://localhost:3000/login', { NID, password });
+      alert(response.data.message);
+      if (userType === 'hospital') {
+        navigate('/hospital-dashboard');
+      } else if (userType === 'doctor') {
+        navigate('/doctor-dashboard');
+      } else if (userType === 'patient') {
+        navigate('/patient-dashboard');
+      } else {
+        closeModal();
+      }
+    } catch (error) {
+      alert('Login failed');
     }
   };
 
-  const handleUserIdChange = (e) => {
+  const handleNIDChange = (e) => {
     const value = e.target.value;
     if (/^\d*$/.test(value)) {
-      setUserId(value);
+      setNID(value);
       setWarning('');
     } else {
-      setWarning('User ID must be a number');
+      setWarning('NID must be a number');
     }
   };
 
@@ -59,12 +65,12 @@ const Login = ({ closeModal, openSignupModal, openForgetPasswordModal, message }
               </select>
             </div>
             <div className="form-group">
-              <label htmlFor="userId">User ID</label>
+              <label htmlFor="NID">NID</label>
               <input
-                type="text"
-                id="userId"
-                value={userId}
-                onChange={handleUserIdChange}
+                type="number"
+                id="NID"
+                value={NID}
+                onChange={handleNIDChange}
                 required
                 className="form-input"
               />
