@@ -9,12 +9,13 @@ const Login = ({ closeModal, openSignupModal, openForgetPasswordModal, message }
   const [NID, setNID] = useState('');
   const [password, setPassword] = useState('');
   const [warning, setWarning] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3000/login', { NID, password });
+      const response = await axios.post('http://localhost:5000/api/login', { NID, password, userType });
       alert(response.data.message);
       if (userType === 'hospital') {
         navigate('/hospital-dashboard');
@@ -26,7 +27,11 @@ const Login = ({ closeModal, openSignupModal, openForgetPasswordModal, message }
         closeModal();
       }
     } catch (error) {
-      alert('Login failed');
+      if (error.response && error.response.data && error.response.data.message) {
+        setErrorMessage(error.response.data.message);
+      } else {
+        setErrorMessage('Login failed');
+      }
     }
   };
 
@@ -48,6 +53,7 @@ const Login = ({ closeModal, openSignupModal, openForgetPasswordModal, message }
           <img src={logo} alt="Site Logo" className="form-logo" />
           <h1 className="form-title">Sign in to your account</h1>
           {message && <p className="login-message">{message}</p>}
+          {errorMessage && <p className="error-message">{errorMessage}</p>}
           <form onSubmit={handleSubmit} className="form">
             <div className="form-group">
               <label htmlFor="userType">User Type</label>

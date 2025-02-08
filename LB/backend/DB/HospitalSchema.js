@@ -6,6 +6,19 @@ const hospitalSchema = new mongoose.Schema({
     required: true,
     unique: true
   },
+  NID: { 
+    type: String, 
+    required: true, 
+    unique: true 
+  },
+  password: { 
+    type: String, 
+    required: true 
+  },
+  role: { 
+    type: String, 
+    default: "Hospital" 
+  },
   licenseNumber: {
     type: String,
     required: true

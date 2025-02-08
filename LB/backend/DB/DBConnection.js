@@ -3,7 +3,10 @@ const mongoURI = process.env.MONGO_URI;
 
 const MongooseConnection = async () => {
   await mongoose
-    .connect(mongoURI)
+    .connect(mongoURI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    })
     .then(() => {
       console.log('Database Connected');
     })

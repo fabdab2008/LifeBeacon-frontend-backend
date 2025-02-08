@@ -1,26 +1,18 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-const patientSchema = new mongoose.Schema({
-  nationalId: {
-    type: String,
-    required: true,
-    unique: true
-  },
-  name: {
-    type: String,
-    required: true
-  },
-  dateOfBirth: Date,
-  medicalHistory: [String],
-  currentMedications: [String],
-  primaryPhysician: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Doctor'
-  },
-  registeredHospital: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Hospital'
-  }
+const PatientSchema = new mongoose.Schema({
+  NID: { type: String, required: true, unique: true },
+  password: { type: String, required: true },
+  role: { type: String, default: "Patient" },
+  profilePicture: { type: String },
+  fullName: { type: String, required: true },
+  dateOfBirth: { type: String, required: true },
+  contactNumber: { type: String, required: true },
+  bloodGroup: { type: String, required: true },
+  allergicReaction: { type: String },
+  specialConsiderations: { type: String },
+  pregnancyStatus: { type: String }
 });
 
-module.exports = mongoose.model('Patient', patientSchema);
+const Patient = mongoose.model("Patient", PatientSchema);
+module.exports = Patient;
